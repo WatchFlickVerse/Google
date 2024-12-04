@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        /* Ensure the HTML and body take up the full height and prevent scrolling */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Remove scroll */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://wallpapers.com/images/hd/black-and-white-scenery-with-the-moon-zm19605amj4kd8lh.jpg'); /* Your provided background */
+            background-size: cover;
+            background-position: center;
+            color: #202124;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            position: relative;
+            padding: 10px; /* Added some padding to prevent content from touching edges */
+        }
+
+        /* Google Logo */
+        .google-logo {
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1); /* This turns the logo white */
+            max-width: 100%;
+            height: auto;
+        }
+
+        .search-bar-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        /* Make the search bar much longer and transparent background */
+        .search-bar {
+            width: 80%; /* Increased width for a much longer search bar */
+            max-width: 600px; /* Max width for large screens */
+            padding: 12px 20px;
+            font-size: 18px;
+            background-color: transparent; /* Transparent background */
+            border: 1px solid #dcdcdc; /* Border is visible */
+            border-radius: 24px;
+            outline: none;
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+            transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
+            color: white; /* Text color inside the search bar */
+            font-weight: bold; /* Make text bold */
+            padding-left: 20px;
+        }
+
+        /* Remove the focus outline and blue border on hover */
+        .search-bar:focus,
+        .search-bar:hover {
+            border: 1px solid #dcdcdc; /* Keep the same border color */
+            box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28); /* Keep the same box shadow */
+        }
+
+        /* Grow effect on hover */
+        .search-bar:hover {
+            transform: scale(1.1); /* Grows the search bar by 10% */
+        }
+
+        /* Placeholder text styling */
+        .search-bar::placeholder {
+            color: white; /* Change placeholder text color to white */
+            font-weight: bold; /* Make placeholder text bold */
+        }
+
+        /* Clickable Text Styling */
+        .clickable-text {
+            display: inline-block;
+            font-size: 16px;
+            color: white; /* White text */
+            font-weight: bold; /* Bold font */
+            text-decoration: none; /* Remove underline */
+            padding: 10px;
+            transition: color 0.3s ease, transform 0.3s ease; /* Added transition for scaling */
+        }
+
+        .clickable-text:hover {
+            color: #f1f3f4; /* Light color on hover */
+            transform: scale(1.2); /* Grow the text by 20% when hovered */
+        }
+
+        /* Make sure the page is mobile responsive */
+        @media (max-width: 600px) {
+            /* Reduce font size for smaller devices */
+            .search-bar {
+                width: 90%; /* Make the search bar slightly smaller on mobile */
+                font-size: 16px;
+                padding: 10px 15px;
+            }
+
+            .clickable-text {
+                font-size: 14px;
+            }
+
+            .google-logo {
+                margin-bottom: 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Google Logo -->
+    <img 
+        class="google-logo" 
+        src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" 
+        alt="Google Logo" 
+        width="300"
+    >
+
+    <!-- Search Form (without submit button) -->
+    <form action="https://www.google.com/search" method="get">
+        <div class="search-bar-container">
+            <input type="text" name="q" class="search-bar" placeholder="SEARCH" />
+        </div>
+    </form>
+
+    <!-- "I'm Feeling Lucky" -->
+    <div class="buttons-container">
+        <a href="https://www.google.com/search?btnI=1&q=" class="clickable-text" target="_blank">I'm Feeling Lucky</a>
+    </div>
+</body>
+</html>
